@@ -1,0 +1,124 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, total={7.5in, 10.5in}]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{gensymb}
+\usepackage{caption}
+\usepackage[export]{adjustbox}
+\setlength\fboxsep{10pt}
+\setlength\fboxrule{1pt}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{textcomp}
+
+\setlength{\parindent}{0pt}
+\newcommand{\sun}{_{\odot}}
+
+
+
+
+
+
+\begin{document}
+
+
+	\begin{titlepage}
+	\vspace*{\fill}
+	\begingroup
+	\centering
+	
+	\huge{Experiment 6 - Millikan Oil Drop Experiment}\\
+	[1cm]
+	\textsc{\large Karl Riedewald 123377661}\\
+	
+	\vspace*{\fill}
+	
+	\endgroup
+\end{titlepage}
+
+\section{Introduction}
+
+\section{Measurement of the Angular Size of the Sun} \label{sec: Angular Size of Sun}
+A small Dobsonian telescope was set up as shown in Figures \ref{fig:Sun Apparatus} and \ref{fig:Sun Protection}.
+
+\subsection{Experiment: Projection Method} \label{sec: Projection Method}
+
+\begin{figure}[H]
+	\centering
+	% First image
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Images/sun_apparatus}
+		\caption{Telescope Setup}
+		\label{fig:Sun Apparatus}
+	\end{minipage}
+	\hfill
+	% Second image
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Images/sun_protector}
+		\caption{Sun Telescope Protection}
+		\label{fig:Sun Protection}
+	\end{minipage}
+\end{figure}
+
+It was ensured that the screen was perpendicular to the direction of the projected image. A 20mm focal length eyepiece was inserted into the focuser. The telescope was pointed at the Sun using by viewing the shadow shadow that it casts. The projected image of the Sun onto the screen was brought into sharp focus by adjusting the eyepiece focus. The distance from the top of the eyepiece to the projected image was measured using a ruler and recorded as $D$. Using a pencil, the outline of the projected image was drawn onto the screen. The diameter of this outline was then measured using the ruler and recorded as $d$.
+
+\vspace{15pt}
+
+\subsection{Experiment: Timing Method} \label{sec: Timing Method}
+Using the same apparatus as in section \ref{sec: Projection Method}, an arc was drawn around the projected image of the Sun. At the same moment, a timer was started. The timer was stopped at the instant when the projected image traversed its own diameter. This is illustrated in figures \ref{fig: Sun Timer Start} and \ref{fig: Sun Timer Stop}.
+
+\begin{figure}[H]
+	\centering
+	% First image
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{../Images/sun_projection_start}
+		\caption{Just after the timer was started.}
+		\label{fig: Sun Timer Start}
+	\end{minipage}
+	\hfill
+	% Second image
+	\begin{minipage}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{../Images/sun_projection_end}
+		\caption{The moment the timer was stopped.}
+		\label{fig: Sun Timer Stop}
+	\end{minipage}
+\end{figure}
+
+\newpage
+
+\subsection{Results: Projection Method}
+The following are the results obtained for the distance from the lens to the screen $D$ and the diameter of the projected image $d$.
+\begin{align*}
+	D &= 8.5 \pm 0.2 \, \unit{cm}\\
+	d &= 1.4 \pm 0.1 \, \unit{cm}
+\end{align*}
+
+$\Delta D$ is twice as great as $\Delta d$ due to the increased uncertainty in the exact point where the telescope eyepiece ends. $\Delta d$ is the standard error in using a ruler. \\
+
+From the definition of the radian, the angular size of the sun $\theta\sun$ is given by the following equation for small angles
+\begin{equation}
+	\theta\sun \approx \frac{1}{m} \frac{d}{D} 
+\end{equation}
+
+where $m$ is the magnification of the telescope calculated by dividing the focal length of the telescope $F$ by the focal length of the eyepiece in use $f$.
+
+
+
+
+
+
+
+\section{Discussion}
+
+\section{Conclusion}
+
+\section{Appendix}
+
+\end{document}

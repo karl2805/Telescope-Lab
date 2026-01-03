@@ -1,0 +1,82 @@
+from astropy import units as u
+import astropy.constants as const
+from math import floor, log10
+import numpy as np
+
+import projection_method as pro
+
+def sig_figs(x: float, precision: int):
+    """
+    Rounds a number to number of significant figures
+    Parameters:
+    - x - the number to be rounded
+    - precision (integer) - the number of significant figures
+    Returns:
+    - float
+    """
+
+    x = float(x)
+    precision = int(precision)
+
+    return round(x, -int(floor(log10(abs(x)))) + (precision - 1))
+
+def PrintResult(value, error):
+    value = value.si
+    unit = value.unit
+    error = error.si
+
+    error = sig_figs(error.value, 1)
+
+    error_string = str(error)
+
+    decimal_position = error_string.find('.')
+    round_amount = None
+
+    
+    if(decimal_position == 1):
+        counter = -1
+        for i in error_string:
+            if i != '.' and i != '0':
+                round_amount = counter
+                break
+            counter += 1
+        
+        value = round(value.value, round_amount)
+
+    elif(decimal_position == len(error_string) - 2):
+        round_amount = -(len(error_string) - 3)
+        error = int(error)
+        value = round(int(value.value), int(round_amount))
+        
+    if (round_amount == None):
+        print("Didn't work!")
+        return
+    
+
+    #print('(', value, " \u00B1 ", error, ') ', unit, sep="")
+    print('(', "{:e}".format(value), " \u00B1 ", "{:e}".format(error), ') ', unit, sep="")
+
+
+sigma = (np.pi**2 * u.k**4) / (60 * u.h**3 * const.c**2)
+AU = 1.5e11 * u.meter
+
+sun_diameter = pro.theta.value * AU
+d_sun_diameter = pro.d_theta.value * AU
+
+sun_radius = sun_diameter / 2
+d_sun_radius = d_sun_diameter / 2
+
+sun_area = 4 * np.pi * ((sun_diameter / 2))**2
+
+temperature = 5800 * u.Kelvin
+
+sun_lumonosity = sun_area * const.sigma_sb * temperature**4
+d_sun_lumonosity = 8 * np.pi * d_sun_radius * const.sigma_sb * temperature**4 * d_sun_radius
+
+print(sun_lumonosity, d_sun_lumonosity)
+
+#PrintResult(sun_diameter, d_sun_diameter)
+
+
+
+
